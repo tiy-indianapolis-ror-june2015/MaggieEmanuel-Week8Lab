@@ -25,8 +25,11 @@ gem 'figaro'
 gem 'refile-s3'
 gem 'has_permalink'
 gem 'faker', '~> 1.4.3'
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'rails_admin', '~> 0.7.0'
+gem 'papertrail', '~> 0.9.12'
+gem 'cancan', '~> 1.6.10'
+
+# Use jquery as the JavaScript library gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
