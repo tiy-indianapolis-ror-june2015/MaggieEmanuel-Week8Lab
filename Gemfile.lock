@@ -285,7 +285,7 @@ DEPENDENCIES
   pg
   poltergeist
   rails (= 4.2.3)
-  rails_admin (~> 0.7.0)
+  rails_admin
   refile
   refile-mini_magick
   refile-s3
