@@ -1,0 +1,11 @@
+<header class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <%= link_to "Product_Site_Name", products_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav pull-right list-style-none list-inline">
+        <li><%= link_to "Sign up", new_customer_registration_path %>
+        <li><%= link_to "Sign in", new_customer_session_path %>
+      </ul>
+    </nav>
+  </div>
+</header>
