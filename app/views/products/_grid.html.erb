@@ -1,0 +1,16 @@
+<% @products.each_slice(4) do |row| %>
+<div class="row">
+  <% row.each do |product| %>
+    <div class="col-xs-6 col-sm-3">
+      <div class="thumbnail">
+        <!-- image should eventually link to the listing -->
+        <%= image_tag(product.photo, class: "img-responsive img-thumbnail", alt: "Photo") %>
+        <div class="caption">
+          <h5><%= product.name %></h5>
+          <p><%= product.price %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<% end %>
