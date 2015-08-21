@@ -1,0 +1,9 @@
+<% if customer_signed_in? %>
+  <%=render partial: 'shared/logout' %>
+<% else %>
+  <%= render partial: 'shared/signin' %>
+<% end %>
+
+<div class="container">
+  <%= render partial: 'products/grid' %>
+</div>
