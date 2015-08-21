@@ -24,11 +24,9 @@ gem 'payola-payments'
 gem 'figaro'
 gem 'refile-s3'
 gem 'has_permalink'
-<<<<<<< HEAD
 gem 'rails_admin'
-=======
 gem 'faker', '~> 1.4.3'
->>>>>>> cfbf2763e60bacd3d888baa3b21a409b80dc475c
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
