@@ -1,7 +1,6 @@
 class Admin::ProductsController < ApplicationController
 
 
-  before_action :authenticate_user!
 
 
 
@@ -22,7 +21,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def update
-    
+
   end
 
   def destroy
