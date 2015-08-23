@@ -8,6 +8,17 @@ class Order < ActiveRecord::Base
       order_items.collect { |oi| oi.valid ? (oi.quantity * oi.unit_price) : 0 }.sum
   end
 
+  def add_order_item(product_id)
+    order_item = order_items.where('product_id = ?', product_id).first
+    if order_item
+      order_item.quantity + 1
+      save
+    else
+      order.order_items << Order_Item.new(product_id: product_id, quantity: 1)
+    end
+    save
+  end
+
 
   private
 
