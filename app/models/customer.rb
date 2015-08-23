@@ -5,6 +5,10 @@ class Customer < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :products
-  
+  belongs_to :role
+
+  def admin?  
+  end
+
 
 end
