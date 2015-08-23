@@ -1,14 +1,21 @@
 <% @products.each_slice(4) do |row| %>
 <div class="row">
   <% row.each do |product| %>
-    <div class="col-xs-6 col-sm-3">
+    <div class="col-md-3" id="item">
       <div class="thumbnail">
-        <!-- image should eventually link to the listing -->
         <%= image_tag(product.photo, class: "img-responsive img-thumbnail", alt: "Photo") %>
-        <div class="caption">
-          <h5><%= product.name %></h5>
-          <p><%= product.price %></p>
-        </div>
+          <div class="caption">
+            <%= form_for order_item, remote: true do |f| %>
+            <h4 class="text-right">Unit Price: <span style="color: green"><%= number_to_currency product.price %></span></h4>
+              <div class="input-group">
+                <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
+                <div class="input-group-btn">
+                  <%= f.hidden_field :product_id, value: product.id %>
+                  <%= link_to "add to cart", order_items_path(:product_id => product), :method => :post, class: "btn btn-primary" %>
+                </div>
+              </div>
+              <% end %>
+          </div>
       </div>
     </div>
   <% end %>

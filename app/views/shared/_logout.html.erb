@@ -4,14 +4,11 @@
     <%= link_to "Product_Site_Name", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav pull-right list-style-none list-inline">
-        <li><%= link_to "Logout", destroy_customer_session_path, :method => :delete %></li>
-        <li><%= link_to "My Store", root_path %></li>
         <li class="cart-text"><%= render 'layouts/cart_text' %></li>
+        <li><%= link_to "Logout", destroy_customer_session_path, :method => :delete %></li>
         <% if current_customer.admin == true %>
           <li><%= link_to "ADMIN", rails_admin_path %></li>
         <% end %>
-
-
       </ul>
     </nav>
   </div>
