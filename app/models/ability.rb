@@ -1,7 +1,7 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
+  def initialize(customer)
     customer ||= Customer.new # guest user (not logged in)
 
     alias_action :create, :read, :update, :destroy, :to => :crud
@@ -34,5 +34,5 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
-  end
+  
 end
