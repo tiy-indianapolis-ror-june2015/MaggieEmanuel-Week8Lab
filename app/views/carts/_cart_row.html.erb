@@ -3,11 +3,13 @@
 </div>
 <div class="well">
   <% @cart.order_items.each do |order_item| %>
-  <div class="row">
+  <div class="row col-md-offset-1">
       <h4><%= order_item.product.name %></h4>
       <p>Quantity:<%= order_item.quantity %></p>
       <p>Price:<%= number_to_currency order_item.total_price %></p>
   </div>
   <% end %>
-  <h4>Total Price: <span style="color: green"><%=  %></span></h4>
+  <div class="col-md-offset-7">
+    <h4>Total Price: <span style="color: green"><%=  %></span></h4>
+  </div>
 </div>
