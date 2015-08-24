@@ -4,10 +4,10 @@ class Customer < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :products
+  has_many :carts
   belongs_to :role
 
-  def admin?  
+  def admin?
   end
 
 

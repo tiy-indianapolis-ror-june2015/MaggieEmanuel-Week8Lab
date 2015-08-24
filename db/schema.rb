@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150823212446) do
+ActiveRecord::Schema.define(version: 20150824195659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "carts", force: :cascade do |t|
+    t.integer  "customer_id"
+    t.integer  "price",       default: 0
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.string   "name",        default: "Shopping Cart"
+    t.string   "permalink"
+  end
 
   create_table "customers", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -39,10 +48,11 @@ ActiveRecord::Schema.define(version: 20150823212446) do
     t.integer  "product_id"
     t.integer  "order_id"
     t.integer  "unit_price"
-    t.integer  "quantity"
+    t.integer  "quantity",    default: 1
     t.integer  "total_price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "cart_id"
   end
 
   add_index "order_items", ["order_id"], name: "index_order_items_on_order_id", using: :btree
@@ -176,7 +186,6 @@ ActiveRecord::Schema.define(version: 20150823212446) do
     t.boolean  "active"
     t.integer  "price"
     t.string   "photo"
-    t.string   "permalink"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
