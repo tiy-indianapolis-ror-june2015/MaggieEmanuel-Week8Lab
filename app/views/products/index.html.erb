@@ -5,12 +5,11 @@
 <% end %>
 
 <h3 class="text-center">Products for Sale</h3>
-
+<br>
 <div class="row">
-  <div class="col-xs-9 col-xs-offset-1">
+  <div class="col-xs-6 col-xs-offset-3">
     <% @products.each do |product| %>
-      <%= render "grid", product: product, order_item: @order_item %>
-      <%= render 'payola/transactions/checkout', sellable: product %>
+      <%= render "product_row", product: product, order_item: @order_item %>
     <% end %>
   </div>
 </div>

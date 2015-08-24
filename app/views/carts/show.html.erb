@@ -1,4 +1,6 @@
-
 <div class="shopping-cart">
-  <%= render "shopping_cart" %>
+  <%= render "cart_row" %>
+</div>
+<div class="col-md-offset-8">
+  <%= render 'payola/transactions/checkout', sellable: @cart %>
 </div>
